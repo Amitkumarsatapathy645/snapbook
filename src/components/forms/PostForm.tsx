@@ -13,7 +13,6 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from ".
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import  {useCreatePost, useUpdatePost}  from "@/lib/react-query/queriesAndMutations";
-import { updatePost } from "@/lib/appwrite/api";
 import Loader from "../shared/Loader";
 
 type PostFormProps = {

@@ -1,8 +1,7 @@
-import React from 'react'
+
 import {Models} from 'appwrite'
 import Loader from './Loader'
 import GridPostList from './GridPostList';
-import { searchPosts } from '@/lib/appwrite/api';
 // import GridPostList from './GridPostList'
 
 type SearchResultProps={
@@ -15,9 +14,9 @@ const SearchResults=({isSearchFetching,searchedPosts}:
   SearchResultProps)=>{
     if(isSearchFetching)return <Loader/>
 
-    if (searchedPosts  && searchedPosts.documents.length>0){
+    if (searchedPosts  && searchedPosts.length>0){
       return(
-        <GridPostList posts={searchPosts.documents}/>
+        <GridPostList posts={searchedPosts}/>
       )
     }
     return(

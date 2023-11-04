@@ -49,7 +49,7 @@ const Explore = () => {
 
   const shouldShowSearchResults = searchValue !== "";
   const shouldShowPosts = !shouldShowSearchResults && 
-    posts.pages.every((item) => item.documents.length === 0);
+  posts.pages.every((item) => item && item.documents.length === 0);
 
   return (
     <div className="explore-container">
@@ -99,7 +99,7 @@ const Explore = () => {
           <p className="w-full mt-10 text-center text-light-4">End of posts</p>
         ) : (
           posts.pages.map((item, index) => (
-            <GridPostList key={`page-${index}`} posts={item.documents} />
+            item && <GridPostList key={`page-${index}`} posts={item.documents} />
           ))
         )}
       </div>
